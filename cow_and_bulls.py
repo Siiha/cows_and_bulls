@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-import random
+import random,string
 @dataclass
 class Player:
 	name: str
@@ -7,14 +7,14 @@ class Player:
 n = input("Name: ")
 def input_check():
 	c = input("Code: ")
-	ch = lambda c: all([i in "0123456789" for i in c])
+	ch = lambda c: all([i in string.digits for i in c])
 	while len(c)!=4 or not ch(c) or len(c)!=len(set(c)):
 		print("The length of the code is 4 digits and all digits are unique.")
 		c = input("Code: ")
 	return c
 p1 = Player(n)
 def game(p):
-	code = "".join(random.sample("0123456789",4))
+	code = random.sample(string.digits,4)
 	c = input_check()
 	def bulls_cows(c):
 		a = sum([i==j for i,j in zip(code,c)])
