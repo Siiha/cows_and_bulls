@@ -14,7 +14,7 @@ def input_check():
 	return c
 p1 = Player(n)
 def game(p):
-	code = "".join(random.sample(list("0123456789"),4))
+	code = "".join(random.sample("0123456789",4))
 	c = input_check()
 	def bulls_cows(c):
 		a = sum([i==j for i,j in zip(code,c)])
