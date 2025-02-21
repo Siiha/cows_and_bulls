@@ -24,6 +24,6 @@ def game(p):
 		bc=bulls_cows(c)
 		print(f"{bc[0]} bulls, {bc[1]} cows")
 		p.guess+=1
-		c = input()
+		c = input_check()
 game(p1)
 print(p1.guess)
