@@ -4,7 +4,7 @@ import random
 class Player:
 	name: str
 	guess: int=1
-n = input("Give your name: ")
+n = input("Name: ")
 def input_check():
 	c = input("Code: ")
 	ch = lambda c: all([i in "0123456789" for i in c])
