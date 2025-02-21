@@ -14,10 +14,12 @@ def input_check():
 	return c
 p1 = Player(n)
 def game(p):
-	code = "".join(str(i) for i in random.sample(range(0,9),4))
+	code = "".join(random.sample(list("0123456789"),4))
 	c = input_check()
-	def bulls_cows(c):a = sum([i==j for i,j in zip(code,c)]);b = sum([i in c for i in code])-a;return b,a
-		 
+	def bulls_cows(c):
+		a = sum([i==j for i,j in zip(code,c)])
+		b = sum([i in c for i in code])-a
+		return b,a
 	while code != c:
 		bc=bulls_cows(c)
 		print(f"{bc[0]} bulls, {bc[1]} cows")
